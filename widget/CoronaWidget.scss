@@ -1,0 +1,108 @@
+#coronavirus-widget {
+    display: block;
+}
+
+.corona-widget__container {
+    position: fixed;
+    display: block;
+    padding: 32px;
+    z-index: 100;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.6);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    max-width: 50vw;
+    text-align: center;
+    font-size: 16px;
+    transition: opacity 0.5s ease-in;
+
+    h4 {
+        margin: 0;
+        text-decoration: underline;
+    }
+
+    &[data-position='top-right'] {
+        right: 0;
+        left: unset;
+    }
+
+    &[data-position='bottom-right'] {
+        right: 0;
+        left: unset;
+        bottom: 0;
+        top: unset;
+    }
+
+    &[data-position='bottom-left'] {
+        bottom: 0;
+        top: unset;
+    }
+
+    a {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 8px;
+    }
+
+    @keyframes hide-anim {
+        from {
+            opacity: 1;
+            transform: translateX(0px);
+            display: block;
+        }
+
+        to {
+            opacity: 0;
+            transform: translateX(-100vw);
+            display: none;
+        }
+    }
+
+    &.hidden {
+        animation: hide-anim 1s ease-in forwards;
+    }
+
+    button {
+        padding: 10px 24px;
+        background-color: #444;
+        border: none;
+        border-radius: 2px;
+        font-size: 16px;
+        color: white;
+        font-weight: bold;
+        box-shadow: 0px 2px 2px 1px black;
+        transition: 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #777;
+        }
+
+        &:active,
+        &:focus {
+            outline: 1px dotted lightgray;
+            outline-offset: -8px;
+            box-shadow: inset 0px 2px 2px 1px black;
+            background-color: #777;
+        }
+    }
+
+    @media (max-width: 600px) {
+        box-sizing: border-box;
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        place-items: center;
+        margin: 0 0;
+        padding: 8px 16px;
+        max-width: unset;
+        width: 100%;
+        height: fit-content;
+        border-radius: 0;
+    }
+}

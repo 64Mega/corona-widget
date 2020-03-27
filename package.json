@@ -1,0 +1,23 @@
+{
+    "name": "coronavirus-widget",
+    "description": "A widget that links to the official South African Coronavirus information portal, as required by law on all .za TLDs",
+    "authors": "Daniel Lawrence",
+    "version": "1.0.0",
+    "main": "index.html",
+    "dependencies": {
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
+    },
+    "scripts": {
+        "start": "npx parcel serve index.html --out-dir build",
+        "build": "npx parcel build app.tsx"
+    },
+    "devDependencies": {
+        "@types/react": "^16.9.26",
+        "@types/react-dom": "^16.9.5",
+        "cssnano": "^4.1.10",
+        "sass": "^1.26.3",
+        "typescript": "^3.8.3"
+    },
+    "license": "MIT"
+}
